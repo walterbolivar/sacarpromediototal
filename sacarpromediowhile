@@ -1,0 +1,41 @@
+// ll.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include "iostream"
+#include "conio.h"
+
+using namespace std;
+
+void main()
+{	int faltas,registro,cont=0;
+	float nf, p1, p2, pf, pr, promedio=0;
+	cout<<"ingrese registro: ";
+	cin>>registro;
+	while(registro!=-999)
+	{
+		cout<<"ingrese p1: ";
+		cin>>p1;
+		cout<<"ingrese p2: ";
+		cin>> p2;
+		cout<<"ingrese pr: ";
+		cin>> pr;
+		cout<< "ingrese pf: ";
+		cin>> pf;
+		cout<<"ingrese faltas: ";
+		cin>>faltas;
+	    if(faltas>10)
+			pf=0;
+		nf=(((p1+p2)/2)*0.4)+(pr*0.2)+(pf*0.4);
+		if(nf>=51)
+		   cout<<"aprobado";
+		else
+		   cout<<"reprobado";
+		cout<<"ingrese registro: ";
+		cin>> registro;
+		promedio=promedio+nf;
+		cont++;
+	}
+	cout<<"el promedio: " <<promedio/cont;
+	getch();
+}
